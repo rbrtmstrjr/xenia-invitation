@@ -5,8 +5,8 @@ import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import Image from "next/image";
 import invitationData from "@/data/invitationData.json";
 
-const rotations = [-6, 4, -3, 5, -4, 3, -5, 2, -4, 6, -2, 4, -5, 3, -3];
-const sagOffsets = [0, 10, 18, 24, 20, 12, 4, 12, 20, 24, 18, 10, 4, 14, 22];
+const rotations = [-6, 4, -3, 5, -4, 3, -5, 2, -4, 6, -2, 4, -5, 3];
+const sagOffsets = [0, 10, 18, 24, 20, 12, 4, 12, 20, 24, 18, 10, 4, 14];
 
 function Clothespin() {
   return (
