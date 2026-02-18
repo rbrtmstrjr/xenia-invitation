@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DESIGN TOKEN SYSTEM
+   ========================================================================== */
+
+@theme {
+  /* ===== AMETHYST — Primary Accent ===== */
+  --color-amethyst-50: #fbf6fe;
+  --color-amethyst-100: #f5eafd;
+  --color-amethyst-200: #edd9fb;
+  --color-amethyst-300: #e0baf8;
+  --color-amethyst-400: #cd8ef2;
+  --color-amethyst-500: #b963e9;
+  --color-amethyst-600: #ae54de;
+  --color-amethyst-700: #8f30c0;
+  --color-amethyst-800: #782c9d;
+  --color-amethyst-900: #62257e;
+  --color-amethyst-950: #440f5c;
+
+  /* ===== BRILLIANT ROSE — Secondary Accent ===== */
+  --color-rose-50: #fcf3f8;
+  --color-rose-100: #fae9f4;
+  --color-rose-200: #f7d3e9;
+  --color-rose-300: #f2afd6;
+  --color-rose-400: #e97dba;
+  --color-rose-500: #de549e;
+  --color-rose-600: #cc367f;
+  --color-rose-700: #b02665;
+  --color-rose-800: #922254;
+  --color-rose-900: #7a2149;
+  --color-rose-950: #4a0d28;
+
+  /* ===== NEUTRAL — Foundation ===== */
+  --color-neutral-50: #faf9fc;
+  --color-neutral-100: #f3f1f7;
+  --color-neutral-200: #e9e6f0;
+  --color-neutral-300: #d6d1e1;
+  --color-neutral-400: #b6afc6;
+  --color-neutral-500: #978eab;
+  --color-neutral-600: #7c728f;
+  --color-neutral-700: #665c75;
+  --color-neutral-800: #554c62;
+  --color-neutral-900: #484053;
+  --color-neutral-950: #2e2738;
+
+  /* ===== SEMANTIC ===== */
+  --color-success: #6EAF7E;
+  --color-error: #D4766E;
+}
+
+/* ==========================================================================
+   FONT UTILITIES
+   ========================================================================== */
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  }
+  .font-body {
+    font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  }
+  .font-script {
+    font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  }
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  }
+
+  /* Fixed pastel gradient background */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      160deg,
+      #ebddff 0%,
+      #f2dcf8 25%,
+      #ffd3e9 50%,
+      #ffe8d4 75%,
+      #fff8d8 100%
+    );
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-amethyst-300);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-amethyst-500);
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--color-amethyst-200);
+    color: var(--color-amethyst-900);
+  }
+}
+
+/* ==========================================================================
+   CUSTOM UTILITIES
+   ========================================================================== */
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-amethyst-500), var(--color-rose-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 40px rgba(185, 99, 233, 0.25), 0 0 80px rgba(222, 84, 158, 0.1);
+  }
+
+  .gradient-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-amethyst-400), var(--color-rose-400), transparent);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(185, 99, 233, 0.1);
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(185, 99, 233, 0.12), 0 0 40px rgba(222, 84, 158, 0.06); }
+  50% { box-shadow: 0 0 28px rgba(185, 99, 233, 0.22), 0 0 50px rgba(222, 84, 158, 0.1); }
+}

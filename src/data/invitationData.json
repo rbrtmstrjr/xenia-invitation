@@ -1,0 +1,70 @@
+{
+  "baby": {
+    "firstName": "Xenia",
+    "middleName": "Gail",
+    "fullName": "Xenia Gail"
+  },
+  "event": {
+    "date": "2026-03-08T09:00:00",
+    "displayDate": "Sunday, March 8th, 2026",
+    "time": "9:00 AM",
+    "church": {
+      "name": "St. Mary's Church",
+      "address": "123 Faith Avenue, Athens, Greece"
+    },
+    "reception": {
+      "name": "Garden of Eden Venue",
+      "address": "456 Blessing Boulevard, Athens, Greece"
+    },
+    "dressCode": "Semi-formal attire in soft, pastel colors is encouraged"
+  },
+  "invitation": {
+    "subtitle": "You're Invited",
+    "heading": "A Letter From Our Hearts",
+    "message": "With hearts full of joy and gratitude, we invite you to share in the blessing of our little angel's Christening. This sacred day marks the beginning of Xenia's spiritual journey, and we would be honored to have you by our side.",
+    "blessing": "May God's grace and love surround our precious Xenia as she is welcomed into His embrace. We pray for a life filled with faith, hope, and endless love."
+  },
+  "godparents": {
+    "godmothers": [
+      { "name": "Maria A.", "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" },
+      { "name": "Sofia K.", "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" },
+      { "name": "Elena P.", "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&q=80" },
+      { "name": "Christina N.", "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&q=80" }
+    ],
+    "godfathers": [
+      { "name": "Dimitris A.", "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" },
+      { "name": "Georgios P.", "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" },
+      { "name": "Andreas M.", "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" },
+      { "name": "Nikolaos S.", "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80" }
+    ]
+  },
+  "parentsMessage": {
+    "subtitle": "Parents Message",
+    "heading": "A Letter From Our Hearts",
+    "message": "Our little miracle arrived on a beautiful spring morning, filling our lives with immeasurable love and joy. As we celebrate this sacred milestone, we are grateful for the love and blessings that surround our family. Thank you for being part of Xenia's journey of faith.",
+    "signOff": "With all our love,",
+    "parents": "Nikolaos & Elena"
+  },
+  "gallery": [
+    { "src": "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80", "alt": "Heavenly soft clouds and light" },
+    { "src": "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=600&q=80", "alt": "Soft floral arrangement" },
+    { "src": "https://images.unsplash.com/photo-1471899236350-e3016bf1e69e?w=600&q=80", "alt": "Golden light through trees" },
+    { "src": "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600&q=80", "alt": "White flowers arrangement" },
+    { "src": "https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=600&q=80", "alt": "Peaceful nature scene" },
+    { "src": "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=600&q=80", "alt": "Soft white petals" },
+    { "src": "https://images.unsplash.com/photo-1508185159346-bb1c5e93ebb4?w=600&q=80", "alt": "Dreamy pastel sky" },
+    { "src": "https://images.unsplash.com/photo-1457089328109-e5d9bd499191?w=600&q=80", "alt": "Gentle morning light" },
+    { "src": "https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?w=600&q=80", "alt": "Soft pink blossoms" },
+    { "src": "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=600&q=80", "alt": "Elegant floral detail" },
+    { "src": "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&q=80", "alt": "Blooming white roses" },
+    { "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", "alt": "Warm golden hour" },
+    { "src": "https://images.unsplash.com/photo-1501004318855-cd2e7fc68503?w=600&q=80", "alt": "Serene lavender field" },
+    { "src": "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=600&q=80", "alt": "Heavenly sunlight rays" },
+    { "src": "https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=600&q=80", "alt": "Delicate baby breath flowers" }
+  ],
+  "meta": {
+    "title": "Xenia Gail's Christening Celebration",
+    "description": "You are warmly invited to celebrate the Christening of Xenia Gail. Join us for this blessed occasion.",
+    "ogImage": "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1200&q=80"
+  }
+}
