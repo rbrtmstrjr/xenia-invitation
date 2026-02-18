@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LoadingScreen from "@/components/LoadingScreen";
 import Hero from "@/components/Hero";
 import StoryMessage from "@/components/StoryMessage";
 import CountdownTimer from "@/components/CountdownTimer";
@@ -16,6 +17,7 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
+      <LoadingScreen />
       <Hero />
       <StoryMessage />
       <CountdownTimer />
