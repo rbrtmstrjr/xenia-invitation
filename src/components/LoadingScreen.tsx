@@ -153,9 +153,8 @@ export default function LoadingScreen() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
                     className="w-full h-auto" />
                 </div>
-                {/* Bottom right — correct reference */}
-                <div className="absolute -bottom-4 -right-4 w-48 sm:w-56 md:w-72 z-20 pointer-events-none"
-                  style={{ transform: "scale(-1, -1)" }}>
+                {/* Bottom right */}
+                <div className="absolute -bottom-4 -right-4 w-48 sm:w-56 md:w-72 z-20 pointer-events-none">
                   <motion.img src="/images/decorations/flower.svg" alt=""
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -180,7 +179,7 @@ export default function LoadingScreen() {
 
             {/* "I'm Xenia Gail" — typing animation, large */}
             <div className="min-h-[60px] sm:min-h-[75px] flex items-center justify-center mt-4 sm:mt-6">
-              <p className="font-heading text-4xl sm:text-5xl md:text-7xl text-amethyst-800 tracking-wide whitespace-nowrap">
+              <p className="font-heading text-6xl sm:text-7xl md:text-8xl text-amethyst-800 tracking-wide sm:whitespace-nowrap uppercase font-light">
                 {displayedText}
                 {!typingDone && (
                   <motion.span
