@@ -26,16 +26,21 @@
   },
   "godparents": {
     "godmothers": [
-      { "name": "Maria A.", "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" },
-      { "name": "Sofia K.", "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" },
-      { "name": "Elena P.", "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&q=80" },
-      { "name": "Christina N.", "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&q=80" }
+      { "name": "Lovely Rose Militar", "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" },
+      { "name": "Hydie Ver Casihan", "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80" },
+      { "name": "Hazel Gabriel", "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" },
+      { "name": "Mary Jane Sangarios", "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&q=80" },
+      { "name": "Mary Ann Fetalco", "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80" },
+      { "name": "Maria Theresa Villanueva", "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=80" },
+      { "name": "Angela Mae Galicia", "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" },
+      { "name": "Nathalie Falsario", "photo": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&q=80" },
+      { "name": "Precious Jade Malones", "photo": "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=300&q=80" }
     ],
     "godfathers": [
-      { "name": "Dimitris A.", "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" },
-      { "name": "Georgios P.", "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" },
-      { "name": "Andreas M.", "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" },
-      { "name": "Nikolaos S.", "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80" }
+      { "name": "Francisco Ebuenga", "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
+      { "name": "LJ Santiago", "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" },
+      { "name": "Jhon Paul Gaspado", "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" },
+      { "name": "Jay-Ar Maestro", "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" }
     ]
   },
   "parentsMessage": {

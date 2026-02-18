@@ -12,8 +12,19 @@ export default function Footer() {
   const { parentsMessage, baby } = invitationData;
 
   return (
-    <footer className="py-16 sm:py-24 pb-12">
-      <div className="max-w-2xl mx-auto px-6 text-center">
+    <footer>
+      {/* Top lavender border */}
+      <div
+        className="w-full h-24 sm:h-32"
+        style={{
+          backgroundImage: "url(/images/decorations/lavander.png)",
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "auto 100%",
+          backgroundPosition: "center",
+        }}
+      />
+
+      <div className="max-w-2xl mx-auto px-6 text-center py-16 sm:py-20">
         {/* Header */}
         <motion.div
           variants={fadeIn}
@@ -75,6 +86,17 @@ export default function Footer() {
           </p>
         </motion.div>
       </div>
+
+      {/* Bottom lavender border */}
+      <div
+        className="w-full h-24 sm:h-32"
+        style={{
+          backgroundImage: "url(/images/decorations/lavander.png)",
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "auto 100%",
+          backgroundPosition: "center",
+        }}
+      />
     </footer>
   );
 }
