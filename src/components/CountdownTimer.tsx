@@ -22,26 +22,38 @@ function calculateTimeLeft(targetDate: string): TimeLeft {
 
 function TimeBlock({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center">
-      <motion.div
-        className="w-22 h-22 sm:w-28 sm:h-28 rounded-2xl flex items-center justify-center
-          shadow-sm animate-pulse-glow"
-        style={{ backgroundColor: "#7E30FF" }}
+    <motion.div
+      className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex flex-col items-center justify-center
+        shadow-sm animate-pulse-glow"
+      style={{ backgroundColor: "#7E30FF" }}
+    >
+      <motion.span
+        key={value}
+        initial={{ y: -6, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className="font-heading text-3xl sm:text-4xl text-white font-extrabold leading-none"
       >
-        <motion.span
-          key={value}
-          initial={{ y: -8, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="font-heading text-4xl sm:text-5xl text-white font-extrabold"
-        >
-          {String(value).padStart(2, "0")}
-        </motion.span>
-      </motion.div>
-      <span className="mt-3 text-xs sm:text-sm font-body tracking-widest uppercase text-neutral-500">
+        {String(value).padStart(2, "0")}
+      </motion.span>
+      <span className="mt-1 text-[10px] sm:text-xs font-body tracking-widest uppercase text-white/70">
         {label}
       </span>
-    </div>
+    </motion.div>
+  );
+}
+
+function LavenderBorder({ flip = false }: { flip?: boolean }) {
+  return (
+    <div
+      className={`w-full h-14 sm:h-18 ${flip ? "scale-y-[-1]" : ""}`}
+      style={{
+        backgroundImage: "url(/images/decorations/lavander.png)",
+        backgroundRepeat: "repeat-x",
+        backgroundSize: "auto 100%",
+        backgroundPosition: "center",
+      }}
+    />
   );
 }
 
@@ -74,33 +86,50 @@ export default function CountdownTimer() {
   if (!mounted) return null;
 
   return (
-    <section className="py-12 sm:py-16">
-      <div className="max-w-3xl mx-auto px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="font-body text-sm tracking-[0.3em] uppercase text-neutral-500 mb-8"
-        >
-          Counting down to the blessed day
-        </motion.p>
-
+    <section className="py-4 sm:py-8">
+      <div className="px-0 sm:px-4">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex justify-center gap-5 sm:gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative"
         >
-          <motion.div variants={itemVariants}>
-            <TimeBlock value={timeLeft.days} label="Days" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <TimeBlock value={timeLeft.hours} label="Hours" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <TimeBlock value={timeLeft.minutes} label="Minutes" />
-          </motion.div>
+          {/* Top lavender border */}
+          <LavenderBorder />
+
+          {/* White container */}
+          <div className="bg-white rounded-sm px-6 py-10 sm:py-14 text-center shadow-sm">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-8"
+            >
+              Counting down to the blessed day
+            </motion.p>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="flex justify-center gap-5 sm:gap-8"
+            >
+              <motion.div variants={itemVariants}>
+                <TimeBlock value={timeLeft.days} label="Days" />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <TimeBlock value={timeLeft.hours} label="Hours" />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <TimeBlock value={timeLeft.minutes} label="Minutes" />
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Bottom lavender border */}
+          <LavenderBorder flip />
         </motion.div>
       </div>
     </section>
