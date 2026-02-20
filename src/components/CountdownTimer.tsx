@@ -100,14 +100,21 @@ export default function CountdownTimer() {
 
           {/* White container */}
           <div className="bg-white rounded-sm px-6 py-10 sm:py-14 text-center shadow-sm">
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-8"
+              className="mb-8"
             >
-              Counting down to the blessed day
-            </motion.p>
+              <div className="flex justify-center mb-4">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-amethyst-400" strokeWidth="1.5">
+                  <path d="M6 2h12M6 22h12M7 2v4a6 6 0 006 6 6 6 0 00-6 6v4M17 2v4a6 6 0 01-6 6 6 6 0 006 6v4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800">
+                Counting down to the blessed day
+              </p>
+            </motion.div>
 
             <motion.div
               variants={containerVariants}

@@ -135,6 +135,13 @@ export default function PhotoGallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
+          <div className="flex justify-center mb-4">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-amethyst-400" strokeWidth="1.5">
+              <rect x="2" y="6" width="20" height="14" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="12" cy="13" r="4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M8 2l2 4M14 2l2 4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
           <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             Captured Memories
           </p>

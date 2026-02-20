@@ -22,6 +22,12 @@ export default function StoryMessage() {
           viewport={{ once: true }}
           className="mb-8"
         >
+          <div className="flex justify-center mb-4">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-amethyst-400" strokeWidth="1.5">
+              <path d="M3 8l9 6 9-6" strokeLinecap="round" strokeLinejoin="round" />
+              <rect x="3" y="5" width="18" height="14" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
           <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             {invitation.subtitle}
           </p>

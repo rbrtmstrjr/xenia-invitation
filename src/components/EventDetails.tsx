@@ -97,6 +97,11 @@ export default function EventDetails() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
+          <div className="flex justify-center mb-4">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-amethyst-400" strokeWidth="1.5">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
           <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             Celebration Details
           </p>

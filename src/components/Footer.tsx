@@ -33,6 +33,11 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mb-8"
         >
+          <div className="flex justify-center mb-4">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-amethyst-400" strokeWidth="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
           <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             {parentsMessage.subtitle}
           </p>
