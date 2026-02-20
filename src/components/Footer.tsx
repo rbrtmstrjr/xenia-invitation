@@ -41,7 +41,7 @@ export default function Footer() {
           <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             {parentsMessage.subtitle}
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
+          <h2 className="font-cursive text-4xl sm:text-5xl text-amethyst-800">
             {parentsMessage.heading}
           </h2>
           <div className="flex justify-center mt-4">
@@ -83,7 +83,7 @@ export default function Footer() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-12 pt-8 border-t border-amethyst-200/30"
         >
-          <p className="font-script text-3xl text-gradient-primary mb-2">
+          <p className="font-cursive text-4xl text-gradient-primary mb-2 overflow-visible py-2 leading-relaxed">
             {baby.fullName}
           </p>
           <p className="font-body text-xs text-neutral-400">

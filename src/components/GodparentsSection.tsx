@@ -86,7 +86,7 @@ export default function GodparentsSection() {
           <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             Guided by Faith
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
+          <h2 className="font-cursive text-4xl sm:text-5xl text-amethyst-800">
             The Godparents
           </h2>
           <div className="flex justify-center mt-4">

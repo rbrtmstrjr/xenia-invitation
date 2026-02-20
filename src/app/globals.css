@@ -62,6 +62,9 @@
   .font-script {
     font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
   }
+  .font-cursive {
+    font-family: var(--font-cursive), "Great Vibes", cursive;
+  }
 }
 
 /* ==========================================================================

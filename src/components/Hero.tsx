@@ -83,11 +83,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl
-            text-amethyst-900 tracking-wide
+          className="font-cursive text-6xl sm:text-7xl md:text-8xl lg:text-9xl
+            text-amethyst-900
             drop-shadow-sm leading-tight mb-3"
         >
-          {baby.firstName.toUpperCase()} {baby.middleName.toUpperCase()}
+          {baby.firstName} {baby.middleName}
         </motion.h1>
 
         {/* Subtitle */}

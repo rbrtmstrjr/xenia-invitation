@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const typingText = "Xenia Gail";
 const CHAR_DELAY = 200;
 
-export default function LoadingScreen() {
+export default function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
   const [displayedText, setDisplayedText] = useState("");
   const [typingDone, setTypingDone] = useState(false);
@@ -39,7 +39,8 @@ export default function LoadingScreen() {
 
   const handleEnter = useCallback(() => {
     setIsVisible(false);
-  }, []);
+    onComplete?.();
+  }, [onComplete]);
 
   return (
     <AnimatePresence>
@@ -200,7 +201,7 @@ export default function LoadingScreen() {
               />
             </motion.svg>
 
-            <div className="relative text-center px-10 sm:px-14 py-10 max-w-lg">
+            <div className="relative text-center px-10 sm:px-14 py-10 max-w-lg overflow-visible">
               {/* "Hello" — fixed, no typing */}
               <motion.p
                 initial={{ opacity: 0 }}
@@ -212,8 +213,8 @@ export default function LoadingScreen() {
               </motion.p>
 
               {/* "Xenia Gail" — typing animation, large */}
-              <div className="min-h-[60px] sm:min-h-[75px] flex items-center justify-center mt-4 sm:mt-6">
-                <p className="font-heading text-6xl sm:text-7xl md:text-8xl text-amethyst-800 tracking-wide sm:whitespace-nowrap uppercase font-light">
+              <div className="min-h-[80px] sm:min-h-[100px] md:min-h-[120px] flex items-center justify-center mt-4 sm:mt-6 overflow-visible">
+                <p className="font-cursive text-7xl sm:text-8xl md:text-9xl text-amethyst-800 sm:whitespace-nowrap">
                   {displayedText}
                   {!typingDone && (
                     <motion.span

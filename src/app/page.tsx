@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import LoadingScreen from "@/components/LoadingScreen";
 import Hero from "@/components/Hero";
@@ -11,20 +12,26 @@ import EventDetails from "@/components/EventDetails";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <LoadingScreen />
-      <Hero />
-      <StoryMessage />
-      <CountdownTimer />
-      <PhotoGallery />
-      <GodparentsSection />
-      <EventDetails />
-      <Footer />
-    </motion.main>
+    <>
+      <LoadingScreen onComplete={() => setLoaded(true)} />
+      {loaded && (
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Hero />
+          <StoryMessage />
+          <CountdownTimer />
+          <PhotoGallery />
+          <GodparentsSection />
+          <EventDetails />
+          <Footer />
+        </motion.main>
+      )}
+    </>
   );
 }
