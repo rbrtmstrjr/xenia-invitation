@@ -97,10 +97,10 @@ export default function EventDetails() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-neutral-500 mb-3">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             Celebration Details
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-900">
+          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
             A Sacred Celebration
           </h2>
           <div className="flex justify-center mt-4">

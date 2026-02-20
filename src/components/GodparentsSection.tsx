@@ -72,10 +72,10 @@ export default function GodparentsSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-rose-500 mb-3">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             Guided by Faith
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-900">
+          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
             The Godparents
           </h2>
           <div className="flex justify-center mt-4">

@@ -22,10 +22,10 @@ export default function StoryMessage() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-500 mb-3">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             {invitation.subtitle}
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-900">
+          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
             {invitation.heading}
           </h2>
           <div className="flex justify-center mt-4">
@@ -34,15 +34,17 @@ export default function StoryMessage() {
         </motion.div>
 
         {/* Message */}
-        <motion.p
+        <motion.div
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="font-body text-base sm:text-lg leading-relaxed text-neutral-700 mb-8"
+          className="font-body text-base sm:text-lg leading-relaxed text-neutral-700 mb-8 space-y-4"
         >
-          {invitation.message}
-        </motion.p>
+          {invitation.message.split("\n\n").map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </motion.div>
 
         {/* Blessing */}
         <motion.p

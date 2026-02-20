@@ -33,10 +33,10 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-500 mb-3">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             {parentsMessage.subtitle}
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-900">
+          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
             {parentsMessage.heading}
           </h2>
           <div className="flex justify-center mt-4">

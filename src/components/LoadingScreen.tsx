@@ -148,65 +148,117 @@ export default function LoadingScreen() {
             )}
           </AnimatePresence>
 
-          {/* Center content */}
-          <div className="relative z-10 text-center px-6 max-w-lg">
-            {/* "Hello" — fixed, no typing */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="font-heading text-lg sm:text-xl text-amethyst-600 mb-2"
+          {/* Center content with hexagon frame */}
+          <div className="relative z-10 flex items-center justify-center">
+            {/* Hexagon border 1 */}
+            <motion.svg
+              initial={{ opacity: 0, scale: 0.85, rotate: 30 }}
+              animate={{ opacity: 1, scale: 1, rotate: 30 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute w-[380px] h-[430px] sm:w-[530px] sm:h-[600px] md:w-[640px] md:h-[720px]"
+              viewBox="0 0 200 230"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Hello I&apos;m
-            </motion.p>
+              <defs>
+                <linearGradient id="hexGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#d6baff" />
+                  <stop offset="50%" stopColor="#ffa7d3" />
+                  <stop offset="100%" stopColor="#fff0b0" />
+                </linearGradient>
+              </defs>
+              <polygon
+                points="100,2 193,59 193,171 100,228 7,171 7,59"
+                stroke="url(#hexGrad1)"
+                strokeWidth="1"
+                fill="none"
+              />
+            </motion.svg>
 
-            {/* "I'm Xenia Gail" — typing animation, large */}
-            <div className="min-h-[60px] sm:min-h-[75px] flex items-center justify-center mt-4 sm:mt-6">
-              <p className="font-heading text-6xl sm:text-7xl md:text-8xl text-amethyst-800 tracking-wide sm:whitespace-nowrap uppercase font-light">
-                {displayedText}
-                {!typingDone && (
-                  <motion.span
-                    className="inline-block w-[2px] h-[0.9em] bg-amethyst-500 ml-0.5 align-middle"
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.6, repeat: Infinity }}
-                  />
+            {/* Hexagon border 2 — different tilt */}
+            <motion.svg
+              initial={{ opacity: 0, scale: 0.85, rotate: -10 }}
+              animate={{ opacity: 1, scale: 1, rotate: -10 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+              className="absolute w-[380px] h-[430px] sm:w-[530px] sm:h-[600px] md:w-[640px] md:h-[720px]"
+              viewBox="0 0 200 230"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="hexGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#fff0b0" />
+                  <stop offset="50%" stopColor="#ffa7d3" />
+                  <stop offset="100%" stopColor="#d6baff" />
+                </linearGradient>
+              </defs>
+              <polygon
+                points="100,2 193,59 193,171 100,228 7,171 7,59"
+                stroke="url(#hexGrad2)"
+                strokeWidth="1"
+                fill="none"
+              />
+            </motion.svg>
+
+            <div className="relative text-center px-10 sm:px-14 py-10 max-w-lg">
+              {/* "Hello" — fixed, no typing */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="font-heading text-lg sm:text-xl text-amethyst-600 mb-2"
+              >
+                Hello I&apos;m
+              </motion.p>
+
+              {/* "Xenia Gail" — typing animation, large */}
+              <div className="min-h-[60px] sm:min-h-[75px] flex items-center justify-center mt-4 sm:mt-6">
+                <p className="font-heading text-6xl sm:text-7xl md:text-8xl text-amethyst-800 tracking-wide sm:whitespace-nowrap uppercase font-light">
+                  {displayedText}
+                  {!typingDone && (
+                    <motion.span
+                      className="inline-block w-[2px] h-[0.9em] bg-amethyst-500 ml-0.5 align-middle"
+                      animate={{ opacity: [1, 0] }}
+                      transition={{ duration: 0.6, repeat: Infinity }}
+                    />
+                  )}
+                </p>
+              </div>
+
+              {/* Invite text — revealed after typing finishes */}
+              <AnimatePresence>
+                {showInvite && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    className="mt-3 font-body text-sm sm:text-base text-amethyst-500 leading-relaxed"
+                  >
+                    and you&apos;re invited to witness my 1st Birthday &amp; Christening
+                  </motion.p>
                 )}
-              </p>
+              </AnimatePresence>
+
+              {/* View Invitation button */}
+              <AnimatePresence>
+                {showButton && (
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    onClick={handleEnter}
+                    className="mt-8 px-8 py-3 rounded-full font-body text-sm tracking-widest uppercase
+                      text-white shadow-lg
+                      hover:shadow-xl hover:scale-105
+                      active:scale-95
+                      transition-all duration-200 cursor-pointer"
+                    style={{ background: "linear-gradient(135deg, #b963e9, #de549e)" }}
+                  >
+                    View Invitation
+                  </motion.button>
+                )}
+              </AnimatePresence>
             </div>
-
-            {/* Invite text — revealed after typing finishes */}
-            <AnimatePresence>
-              {showInvite && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  className="mt-3 font-body text-sm sm:text-base text-amethyst-500 leading-relaxed"
-                >
-                  and you&apos;re invited to witness my 1st Birthday &amp; Christening
-                </motion.p>
-              )}
-            </AnimatePresence>
-
-            {/* View Invitation button */}
-            <AnimatePresence>
-              {showButton && (
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                  onClick={handleEnter}
-                  className="mt-8 px-8 py-3 rounded-full font-body text-sm tracking-widest uppercase
-                    text-white shadow-lg
-                    hover:shadow-xl hover:scale-105
-                    active:scale-95
-                    transition-all duration-200 cursor-pointer"
-                  style={{ background: "linear-gradient(135deg, #b963e9, #de549e)" }}
-                >
-                  View Invitation
-                </motion.button>
-              )}
-            </AnimatePresence>
           </div>
         </motion.div>
       )}

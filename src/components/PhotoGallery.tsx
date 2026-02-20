@@ -33,8 +33,11 @@ function Lightbox({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8
-        bg-black/80 backdrop-blur-sm cursor-pointer"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 sm:p-8
+        backdrop-blur-md cursor-pointer"
+      style={{
+        background: "linear-gradient(160deg, rgba(214,186,255,0.5) 0%, rgba(255,167,211,0.5) 50%, rgba(255,240,176,0.5) 100%)",
+      }}
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -45,22 +48,41 @@ function Lightbox({
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="relative max-w-4xl w-full max-h-[85vh] cursor-default"
+        className="relative flex flex-col items-end cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-          <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 80vw" />
-        </div>
+        {/* Close button above the image */}
         <button
           onClick={onClose}
-          className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm
-            flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-colors"
+          className="mb-3 w-10 h-10 rounded-full bg-white/50 backdrop-blur-sm
+            flex items-center justify-center text-amethyst-800 hover:bg-white/70
+            transition-colors shrink-0 cursor-pointer"
           aria-label="Close lightbox"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
         </button>
+
+        {/* Polaroid frame with clothespin */}
+        <div className="relative bg-white p-2 pb-6 sm:p-3 sm:pb-8 rounded-sm shadow-2xl">
+          {/* Clothespin centered above */}
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10 scale-150">
+            <Clothespin />
+          </div>
+          {/* Emoji decoration */}
+          <img
+            src="/images/decorations/emoji.svg"
+            alt=""
+            className="absolute -top-10 -left-6 w-36 h-36 sm:w-44 sm:h-44 z-20 pointer-events-none"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="max-w-[82vw] max-h-[72vh] sm:max-w-[80vw] sm:max-h-[74vh] rounded-sm object-contain"
+          />
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -88,6 +110,15 @@ export default function PhotoGallery() {
     return () => window.removeEventListener("resize", calcLimit);
   }, []);
 
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [selectedImage]);
+
   return (
     <section className="py-16 sm:py-20 overflow-hidden">
       <div className="px-0 sm:px-4">
@@ -99,10 +130,10 @@ export default function PhotoGallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="font-body text-sm tracking-[0.3em] uppercase text-neutral-500 mb-3">
+          <p className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-800 mb-3">
             Captured Memories
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-900">
+          <h2 className="font-heading text-3xl sm:text-4xl text-amethyst-800">
             Precious Moments
           </h2>
           <div className="flex justify-center mt-4">
