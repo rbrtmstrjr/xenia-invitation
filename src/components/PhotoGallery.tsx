@@ -56,7 +56,7 @@ function Lightbox({
           onClick={onClose}
           className="mb-3 w-10 h-10 rounded-full bg-white/50 backdrop-blur-sm
             flex items-center justify-center text-amethyst-800 hover:bg-white/70
-            transition-colors shrink-0 cursor-pointer"
+            transition-colors shrink-0 cursor-pointer z-30 relative"
           aria-label="Close lightbox"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -66,11 +66,16 @@ function Lightbox({
 
         {/* Polaroid frame with clothespin */}
         <div className="relative bg-white p-2 pb-6 sm:p-3 sm:pb-8 rounded-sm shadow-2xl">
-          {/* Clothespin centered above */}
+          {/* Clothespin */}
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10 scale-150">
             <Clothespin />
           </div>
+          {/* Rope line — full screen width, aligned with clothespin top */}
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-[9] w-screen pointer-events-none">
+            <div className="h-[2px] bg-[#c4a06a]" />
+          </div>
           {/* Emoji decoration */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/decorations/emoji.svg"
             alt=""
@@ -143,7 +148,7 @@ export default function PhotoGallery() {
 
         {/* Clothesline */}
         <div className="relative overflow-hidden" ref={constraintsRef}>
-          {/* Curved rope SVG — follows the photos */}
+          {/* Curved rope SVG */}
           <motion.svg
             initial={{ pathLength: 0, opacity: 0 }}
             whileInView={{ pathLength: 1, opacity: 1 }}
