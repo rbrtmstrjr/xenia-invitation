@@ -50,15 +50,17 @@ export default function Footer() {
         </motion.div>
 
         {/* Message */}
-        <motion.p
+        <motion.div
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="font-body text-base sm:text-lg leading-relaxed text-neutral-700 mb-8"
+          className="font-body text-base sm:text-lg leading-relaxed text-neutral-700 mb-8 space-y-4"
         >
-          {parentsMessage.message}
-        </motion.p>
+          {parentsMessage.message.split("\n\n").map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </motion.div>
 
         {/* Sign off */}
         <motion.div

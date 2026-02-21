@@ -29,15 +29,15 @@
       { "name": "Lovely Rose Militar", "photo": "/images/godparents/lovely.jpg" },
       { "name": "Hydie Ver Casihan", "photo": "/images/godparents/hydie.jpg" },
       { "name": "Hazel Gabriel", "photo": "/images/godparents/hazel.jpg" },
-      { "name": "Mary Jane Sangarios", "photo": "/images/godparents/mary jane.jpg" },
       { "name": "Mary Ann Fetalco", "photo": "/images/godparents/mary ann.jpg" },
-      { "name": "Maria Theresa Villanueva", "photo": "/images/godparents/maria theresa.jpg" },
       { "name": "Angela Mae Galicia", "photo": "/images/godparents/angela.jpg" },
       { "name": "Nathalie Falsario", "photo": "/images/godparents/nathalie.jpg" },
+      { "name": "Mary Jane Sangarios", "photo": "/images/godparents/mary jane.jpg" },
+      { "name": "Maria Theresa Villanueva", "photo": "/images/godparents/maria theresa.jpg" },
       { "name": "Precious Jade Malones", "photo": "/images/godparents/precious.jpg" }
     ],
     "godfathers": [
-      { "name": "Francisco Ebuenga", "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
+      { "name": "Francisco Ebuenga", "photo": "/images/godparents/francis.jpg" },
       { "name": "LJ Santiago", "photo": "/images/godparents/john lloyd.jpg" },
       { "name": "Jhon Paul Gaspado", "photo": "/images/godparents/john paul.jpg" },
       { "name": "Jay-Ar Maestro", "photo": "/images/godparents/jay ar.jpg" },
@@ -46,10 +46,10 @@
   },
   "parentsMessage": {
     "subtitle": "Parents Message",
-    "heading": "A Letter From Our Hearts",
-    "message": "Our little miracle arrived on a beautiful spring morning, filling our lives with immeasurable love and joy. As we celebrate this sacred milestone, we are grateful for the love and blessings that surround our family. Thank you for being part of Xenia's journey of faith.",
-    "signOff": "With all our love,",
-    "parents": "Nikolaos & Elena"
+    "heading": "With Gratitude and Love",
+    "message": "With grateful hearts, we thank you for celebrating this special day with our family. Your presence, prayers, and love for Xenia truly mean everything to us.\n\nWe kindly share that your presence is already the greatest gift. We humbly ask that no cash gifts be given. If you choose to bring a small gift for Xenia, please know it is completely optional and never expected. We understand that life can be challenging, and simply being here to share this joyful moment is more than enough.\n\nThank you for your love and support.",
+    "signOff": "From Xenia's Parents",
+    "parents": "Robert & Rose"
   },
   "gallery": [
     { "src": "/images/gallery/xenia-1.jpg", "alt": "Xenia moment 1" },
