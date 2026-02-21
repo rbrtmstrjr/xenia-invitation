@@ -45,7 +45,7 @@ export default function StoryMessage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="font-body text-base sm:text-lg leading-relaxed text-neutral-700 mb-8 space-y-4"
+          className="font-body text-base sm:text-lg leading-relaxed mb-8 space-y-4 text-center" style={{ color: "#66558D" }}
         >
           {invitation.message.split("\n\n").map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
@@ -58,7 +58,7 @@ export default function StoryMessage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="font-heading text-lg sm:text-xl italic text-rose-600 leading-relaxed"
+          className="font-heading text-base sm:text-lg italic leading-relaxed text-center" style={{ color: "#66558D" }}
         >
           &ldquo;{invitation.blessing}&rdquo;
         </motion.p>

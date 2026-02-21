@@ -15,12 +15,13 @@ export default function Footer() {
     <footer className="relative">
       {/* Top lavender border */}
       <div
-        className="w-full h-24 sm:h-32"
+        className="w-full h-28 sm:h-36"
         style={{
           backgroundImage: "url(/images/decorations/lavander.png)",
-          backgroundRepeat: "repeat-x",
+          backgroundRepeat: "round",
           backgroundSize: "auto 100%",
           backgroundPosition: "center",
+          marginBottom: "-10px",
         }}
       />
 
@@ -55,7 +56,7 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="font-body text-base sm:text-lg leading-relaxed text-neutral-700 mb-8 space-y-4"
+          className="font-body text-base sm:text-lg leading-relaxed mb-8 space-y-4 text-center" style={{ color: "#66558D" }}
         >
           {parentsMessage.message.split("\n\n").map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
@@ -86,10 +87,10 @@ export default function Footer() {
           className="relative mt-12 pt-8"
         >
           <p className="relative font-cursive text-4xl text-gradient-primary mb-2 overflow-visible py-2 leading-relaxed">
-            {baby.fullName}
+            {baby.fullName} Invitation
           </p>
-          <p className="font-body text-xs text-neutral-400">
-            Made with love for {baby.fullName}&apos;s Christening
+          <p className="font-body text-xs" style={{ color: "#66558D" }}>
+            Lovingly made by {baby.firstName}&apos;s Papa &lt;3
           </p>
         </motion.div>
       </div>
@@ -98,17 +99,18 @@ export default function Footer() {
       <img
         src="/images/decorations/family.png"
         alt=""
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[600px] md:w-[700px] opacity-15 pointer-events-none z-[1]"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[600px] md:w-[700px] opacity-10 pointer-events-none z-[1]"
       />
 
       {/* Bottom lavender border */}
       <div
-        className="w-full h-24 sm:h-32"
+        className="w-full h-28 sm:h-36"
         style={{
           backgroundImage: "url(/images/decorations/lavander.png)",
-          backgroundRepeat: "repeat-x",
+          backgroundRepeat: "round",
           backgroundSize: "auto 100%",
           backgroundPosition: "center",
+          marginTop: "-10px",
         }}
       />
     </footer>

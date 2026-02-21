@@ -44,8 +44,15 @@ function PersonCard({
         </svg>
       </div>
       {/* Polaroid frame */}
-      <div className="bg-white p-2 rounded-sm shadow-md
+      <div className="relative bg-white p-2 rounded-sm shadow-md
         hover:shadow-xl transition-shadow duration-300">
+        {/* Flower decoration */}
+        <img
+          src="/images/decorations/flower.svg"
+          alt=""
+          className="absolute -top-3 -left-3 w-16 h-16 z-20 pointer-events-none"
+          style={{ transform: "scale(-1, -1)" }}
+        />
         <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
           <Image
             src={photo}
@@ -92,7 +99,7 @@ export default function GodparentsSection() {
           <div className="flex justify-center mt-4">
             <div className="gradient-divider" />
           </div>
-          <p className="mt-5 font-body text-sm text-neutral-500 max-w-md mx-auto">
+          <p className="mt-5 font-body text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-center" style={{ color: "#66558D" }}>
             Chosen with love and deep trust, these incredible souls will stand beside {baby.firstName} as her guides in faith, her mentors in life, and her second parents in heart. With their prayers and loving support, they will help nurture her faith and walk with her as she grows.
           </p>
         </motion.div>

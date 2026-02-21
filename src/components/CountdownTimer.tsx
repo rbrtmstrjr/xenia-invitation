@@ -25,18 +25,18 @@ function TimeBlock({ value, label }: { value: number; label: string }) {
     <motion.div
       className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex flex-col items-center justify-center
         shadow-sm animate-pulse-glow"
-      style={{ backgroundColor: "#7E30FF" }}
+      style={{ backgroundColor: "white" }}
     >
       <motion.span
         key={value}
         initial={{ y: -6, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="font-heading text-3xl sm:text-4xl text-white font-extrabold leading-none"
+        className="font-heading text-3xl sm:text-4xl text-amethyst-800 font-extrabold leading-none"
       >
         {String(value).padStart(2, "0")}
       </motion.span>
-      <span className="mt-1 text-[10px] sm:text-xs font-body tracking-widest uppercase text-white/70">
+      <span className="mt-1 text-[10px] sm:text-xs font-body tracking-widest uppercase text-amethyst-800">
         {label}
       </span>
     </motion.div>
@@ -46,12 +46,13 @@ function TimeBlock({ value, label }: { value: number; label: string }) {
 function LavenderBorder({ flip = false }: { flip?: boolean }) {
   return (
     <div
-      className={`w-full h-14 sm:h-18 ${flip ? "scale-y-[-1]" : ""}`}
+      className={`w-full h-20 sm:h-24 ${flip ? "scale-y-[-1]" : ""}`}
       style={{
         backgroundImage: "url(/images/decorations/lavander.png)",
-        backgroundRepeat: "repeat-x",
+        backgroundRepeat: "round",
         backgroundSize: "auto 100%",
         backgroundPosition: "center",
+        margin: flip ? "-8px 0 0 0" : "0 0 -8px 0",
       }}
     />
   );
@@ -98,8 +99,11 @@ export default function CountdownTimer() {
           {/* Top lavender border */}
           <LavenderBorder />
 
-          {/* White container */}
-          <div className="bg-white rounded-sm px-6 py-10 sm:py-14 text-center shadow-sm">
+          {/* Pastel gradient container */}
+          <div
+            className="rounded-sm px-6 py-10 sm:py-14 text-center shadow-sm"
+            style={{ background: "linear-gradient(160deg, #ebddff 0%, #f2dcf8 25%, #ffd3e9 50%, #ffe8d4 75%, #fff8d8 100%)" }}
+          >
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

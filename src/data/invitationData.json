@@ -9,14 +9,14 @@
     "displayDate": "Sunday, March 8th, 2026",
     "time": "9:00 AM",
     "church": {
-      "name": "St. Mary's Church",
-      "address": "123 Faith Avenue, Athens, Greece"
+      "name": "Church of Gods Prophecy",
+      "address": "Balanga II, B del Mundo, Mansalay Oriental Mindoro"
     },
     "reception": {
-      "name": "Garden of Eden Venue",
-      "address": "456 Blessing Boulevard, Athens, Greece"
+      "name": "Maestro Residence",
+      "address": "Balanga I, B del Mundo, Mansalay Oriental Mindoro"
     },
-    "dressCode": "Semi-formal attire in soft, pastel colors is encouraged"
+    "dressCode": "We would love to see our guests in white to match the celebration, but please feel free to wear whatever you are most comfortable in. Your presence matters more than your outfit."
   },
   "invitation": {
     "subtitle": "You're Invited",
@@ -47,7 +47,7 @@
   "parentsMessage": {
     "subtitle": "Parents Message",
     "heading": "With Gratitude and Love",
-    "message": "With grateful hearts, we thank you for celebrating this special day with our family. Your presence, prayers, and love for Xenia truly mean everything to us.\n\nWe kindly share that your presence is already the greatest gift. We humbly ask that no cash gifts be given. If you choose to bring a small gift for Xenia, please know it is completely optional and never expected. We understand that life can be challenging, and simply being here to share this joyful moment is more than enough.\n\nThank you for your love and support.",
+    "message": "With grateful hearts, we thank you for celebrating this special day with our family.Your presence, prayers, and love for Xenia truly mean everything to us.\n\nWe kindly share that your presence is already the greatest gift. We humbly ask that no cash gifts be given. If you choose to bring a small gift for Xenia, we will really appreciate that. We understand that life can be challenging, and simply being here to share this joyful moment is more than enough.\n\nThank you for your love and support.",
     "signOff": "From Xenia's Parents",
     "parents": "Robert & Rose"
   },

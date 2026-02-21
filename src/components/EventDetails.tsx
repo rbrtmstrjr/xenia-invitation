@@ -12,6 +12,13 @@ const cardVariants = {
   }),
 };
 
+const flowerStyles: { color1: string; color2: string; color3: string; rotate: string }[] = [
+  { color1: "#e0baf8", color2: "#ffd3e9", color3: "#d6baff", rotate: "-15deg" },
+  { color1: "#ffa7d3", color2: "#fff0b0", color3: "#ffd3e9", rotate: "20deg" },
+  { color1: "#fff0b0", color2: "#d6baff", color3: "#ffe8d4", rotate: "-25deg" },
+  { color1: "#d6baff", color2: "#ffa7d3", color3: "#e0baf8", rotate: "10deg" },
+];
+
 function DetailCard({
   icon,
   title,
@@ -23,6 +30,7 @@ function DetailCard({
   children: React.ReactNode;
   index: number;
 }) {
+  const flower = flowerStyles[index % flowerStyles.length];
   return (
     <motion.div
       custom={index}
@@ -31,20 +39,70 @@ function DetailCard({
       whileInView="visible"
       viewport={{ once: true, margin: "-40px" }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="group p-6 rounded-2xl glass-card shadow-sm
+      className="relative group p-6 pt-10 rounded-2xl glass-card shadow-sm text-center
         hover:shadow-md hover:border-rose-300/20 transition-all duration-300"
     >
+      {/* Flower decorations — top left and right */}
+      <img
+        src="/images/decorations/flower.svg"
+        alt=""
+        className="absolute -top-6 -left-6 w-24 h-24 z-20 pointer-events-none"
+        style={{ transform: "scale(-1, -1)" }}
+      />
+      <img
+        src="/images/decorations/flower.svg"
+        alt=""
+        className="absolute -top-6 -right-6 w-24 h-24 z-20 pointer-events-none"
+        style={{ transform: "scaleY(-1)" }}
+      />
+      {/* Pastel flower on top */}
       <motion.div
-        className="w-11 h-11 rounded-full flex items-center justify-center
-          bg-amethyst-100/50 text-amethyst-600 mb-4
-          group-hover:bg-rose-100/50 transition-colors duration-300"
+        className="absolute -top-5 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        <PastelFlower
+          className="w-14 h-14 sm:w-16 sm:h-16"
+          color1={flower.color1}
+          color2={flower.color2}
+          color3={flower.color3}
+        />
+      </motion.div>
+      <motion.div
+        className="w-11 h-11 rounded-full flex items-center justify-center mx-auto
+          bg-white text-amethyst-600 mb-4
+          transition-colors duration-300"
         whileHover={{ scale: 1.1, rotate: 5 }}
       >
         {icon}
       </motion.div>
       <h3 className="font-heading text-lg text-amethyst-900 mb-2">{title}</h3>
-      <div className="font-body text-sm text-neutral-600 leading-relaxed">{children}</div>
+      <div className="font-body text-sm sm:text-base leading-relaxed" style={{ color: "#66558D" }}>{children}</div>
     </motion.div>
+  );
+}
+
+function PastelFlower({ className, color1, color2, color3, style }: { className?: string; color1: string; color2: string; color3: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 100 100" className={className} style={style} xmlns="http://www.w3.org/2000/svg">
+      {/* Petals */}
+      <ellipse cx="50" cy="28" rx="14" ry="22" fill={color1} opacity="0.8" />
+      <ellipse cx="50" cy="28" rx="14" ry="22" fill={color2} opacity="0.8" transform="rotate(60 50 50)" />
+      <ellipse cx="50" cy="28" rx="14" ry="22" fill={color1} opacity="0.8" transform="rotate(120 50 50)" />
+      <ellipse cx="50" cy="28" rx="14" ry="22" fill={color3} opacity="0.8" transform="rotate(180 50 50)" />
+      <ellipse cx="50" cy="28" rx="14" ry="22" fill={color2} opacity="0.8" transform="rotate(240 50 50)" />
+      <ellipse cx="50" cy="28" rx="14" ry="22" fill={color3} opacity="0.8" transform="rotate(300 50 50)" />
+      {/* Inner petals */}
+      <ellipse cx="50" cy="34" rx="9" ry="14" fill={color2} opacity="0.6" transform="rotate(30 50 50)" />
+      <ellipse cx="50" cy="34" rx="9" ry="14" fill={color1} opacity="0.6" transform="rotate(90 50 50)" />
+      <ellipse cx="50" cy="34" rx="9" ry="14" fill={color3} opacity="0.6" transform="rotate(150 50 50)" />
+      <ellipse cx="50" cy="34" rx="9" ry="14" fill={color2} opacity="0.6" transform="rotate(210 50 50)" />
+      <ellipse cx="50" cy="34" rx="9" ry="14" fill={color1} opacity="0.6" transform="rotate(270 50 50)" />
+      <ellipse cx="50" cy="34" rx="9" ry="14" fill={color3} opacity="0.6" transform="rotate(330 50 50)" />
+      {/* Center */}
+      <circle cx="50" cy="50" r="8" fill="#fff8d8" opacity="0.9" />
+      <circle cx="50" cy="50" r="5" fill="#ffe8d4" opacity="0.7" />
+    </svg>
   );
 }
 
@@ -114,25 +172,27 @@ export default function EventDetails() {
         </motion.div>
 
         {/* 4-card grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <DetailCard icon={<CalendarIcon />} title="Date & Time" index={0}>
-            <p className="font-medium text-amethyst-800">{event.displayDate}</p>
-            <p className="mt-1">{event.time}</p>
-          </DetailCard>
+        <div className="relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+            <DetailCard icon={<CalendarIcon />} title="Date & Time" index={0}>
+              <p className="font-medium text-amethyst-800">{event.displayDate}</p>
+              <p className="mt-1">{event.time}</p>
+            </DetailCard>
 
-          <DetailCard icon={<ChurchIcon />} title="Ceremony" index={1}>
-            <p className="font-medium text-amethyst-800">{event.church.name}</p>
-            <p className="mt-1">{event.church.address}</p>
-          </DetailCard>
+            <DetailCard icon={<ChurchIcon />} title="Ceremony" index={1}>
+              <p className="font-medium text-amethyst-800">{event.church.name}</p>
+              <p className="mt-1">{event.church.address}</p>
+            </DetailCard>
 
-          <DetailCard icon={<VenueIcon />} title="Reception" index={2}>
-            <p className="font-medium text-amethyst-800">{event.reception.name}</p>
-            <p className="mt-1">{event.reception.address}</p>
-          </DetailCard>
+            <DetailCard icon={<VenueIcon />} title="Reception" index={2}>
+              <p className="font-medium text-amethyst-800">{event.reception.name}</p>
+              <p className="mt-1">{event.reception.address}</p>
+            </DetailCard>
 
-          <DetailCard icon={<DressIcon />} title="What to Wear" index={3}>
-            <p>{event.dressCode}</p>
-          </DetailCard>
+            <DetailCard icon={<DressIcon />} title="What to Wear" index={3}>
+              <p>{event.dressCode}</p>
+            </DetailCard>
+          </div>
         </div>
       </div>
     </section>
