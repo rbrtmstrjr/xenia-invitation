@@ -21,7 +21,7 @@ function useFireflies(count: number) {
       delay: Math.random() * 6,
       drift: (Math.random() - 0.5) * 40,
     })),
-  [count]);
+    [count]);
 }
 
 export default function Hero() {
@@ -29,7 +29,7 @@ export default function Hero() {
   const fireflies = useFireflies(35);
 
   return (
-    <section className="relative min-h-[75vh] sm:min-h-screen flex items-end justify-center overflow-hidden">
+    <section className="relative min-h-[65vh] sm:min-h-screen flex items-end justify-center overflow-hidden">
       {/* Background image */}
       <Image
         src="/images/hero/xenia-hero.jpg"
@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
 
       {/* Content — positioned at the bottom */}
-      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto pb-6 sm:pb-10">
+      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto pb-2 sm:pb-4 transform translate-y-6 sm:translate-y-8">
         {/* Baby name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
