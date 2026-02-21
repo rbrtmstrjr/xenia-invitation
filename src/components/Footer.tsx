@@ -12,7 +12,7 @@ export default function Footer() {
   const { parentsMessage, baby } = invitationData;
 
   return (
-    <footer>
+    <footer className="relative">
       {/* Top lavender border */}
       <div
         className="w-full h-24 sm:h-32"
@@ -24,7 +24,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="max-w-2xl mx-auto px-6 text-center py-16 sm:py-20">
+      <div className="relative z-[2] max-w-2xl mx-auto px-6 text-center py-16 sm:py-20">
         {/* Header */}
         <motion.div
           variants={fadeIn}
@@ -83,9 +83,9 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-12 pt-8 border-t border-amethyst-200/30"
+          className="relative mt-12 pt-8"
         >
-          <p className="font-cursive text-4xl text-gradient-primary mb-2 overflow-visible py-2 leading-relaxed">
+          <p className="relative font-cursive text-4xl text-gradient-primary mb-2 overflow-visible py-2 leading-relaxed">
             {baby.fullName}
           </p>
           <p className="font-body text-xs text-neutral-400">
@@ -93,6 +93,13 @@ export default function Footer() {
           </p>
         </motion.div>
       </div>
+
+      {/* Family image — absolute, bottom-aligned, behind text */}
+      <img
+        src="/images/decorations/family.png"
+        alt=""
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] sm:w-[600px] md:w-[700px] opacity-15 pointer-events-none z-[1]"
+      />
 
       {/* Bottom lavender border */}
       <div

@@ -212,7 +212,7 @@ export default function PhotoGallery() {
                   transition={{ duration: 0.25 }}
                   className="bg-white p-2 pb-5 rounded-sm shadow-md
                     hover:shadow-xl transition-shadow duration-300
-                    w-32 sm:w-36 md:w-40 lg:w-44"
+                    w-40 sm:w-44 md:w-48 lg:w-52"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                     <Image
