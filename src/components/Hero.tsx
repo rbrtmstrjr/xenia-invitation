@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
 
       {/* Content — positioned at the bottom */}
-      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto pb-2 sm:pb-4 transform translate-y-6 sm:translate-y-8">
+      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto pb-2 sm:pb-4 transform translate-y-12 sm:translate-y-8">
         {/* Baby name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

@@ -49,7 +49,7 @@ function LavenderBorder({ flip = false }: { flip?: boolean }) {
       className={`w-full h-20 sm:h-24 ${flip ? "scale-y-[-1]" : ""}`}
       style={{
         backgroundImage: "url(/images/decorations/lavander.png)",
-        backgroundRepeat: "round",
+        backgroundRepeat: "repeat-x",
         backgroundSize: "auto 100%",
         backgroundPosition: "center",
         margin: flip ? "-8px 0 0 0" : "0 0 -8px 0",

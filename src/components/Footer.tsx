@@ -18,7 +18,7 @@ export default function Footer() {
         className="w-full h-28 sm:h-36"
         style={{
           backgroundImage: "url(/images/decorations/lavander.png)",
-          backgroundRepeat: "round",
+          backgroundRepeat: "repeat-x",
           backgroundSize: "auto 100%",
           backgroundPosition: "center",
           marginBottom: "-10px",
@@ -107,7 +107,7 @@ export default function Footer() {
         className="w-full h-28 sm:h-36"
         style={{
           backgroundImage: "url(/images/decorations/lavander.png)",
-          backgroundRepeat: "round",
+          backgroundRepeat: "repeat-x",
           backgroundSize: "auto 100%",
           backgroundPosition: "center",
           marginTop: "-10px",
