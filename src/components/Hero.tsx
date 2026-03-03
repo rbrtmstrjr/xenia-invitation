@@ -29,13 +29,13 @@ export default function Hero() {
   const fireflies = useFireflies(35);
 
   return (
-    <section className="relative min-h-[65vh] sm:min-h-screen flex items-end justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] sm:min-h-screen flex items-end justify-center overflow-hidden">
       {/* Background image */}
       <Image
         src="/images/hero/xenia-hero.jpg"
         alt={`${baby.fullName} hero`}
         fill
-        className="object-cover"
+        className="object-cover object-top sm:object-center"
         sizes="100vw"
         priority
       />
@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
 
       {/* Content — positioned at the bottom */}
-      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto pb-2 sm:pb-4 transform translate-y-12 sm:translate-y-8">
+      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto pb-4 sm:pb-12">
         {/* Baby name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -95,9 +95,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="font-body text-sm tracking-[0.3em] uppercase text-amethyst-600 mb-2"
+          className="font-body text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-amethyst-600 mb-2 leading-relaxed"
         >
-          1st Birthday and Christening Celebration
+          1st Birthday &amp; Christening
         </motion.p>
 
         {/* Divider */}

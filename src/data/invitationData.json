@@ -7,7 +7,7 @@
   "event": {
     "date": "2026-03-08T09:00:00",
     "displayDate": "Sunday, March 8th, 2026",
-    "time": "9:00 AM",
+    "time": "11:00 AM",
     "church": {
       "name": "Church of Gods Prophecy",
       "address": "Balanga II, B del Mundo, Mansalay Oriental Mindoro"
@@ -38,10 +38,11 @@
     ],
     "godfathers": [
       { "name": "Francisco Ebuenga", "photo": "/images/godparents/francis.jpg" },
-      { "name": "LJ Santiago", "photo": "/images/godparents/john lloyd.jpg" },
-      { "name": "Jhon Paul Gaspado", "photo": "/images/godparents/john paul.jpg" },
-      { "name": "Jay-Ar Maestro", "photo": "/images/godparents/jay ar.jpg" },
-      { "name": "Rafael Pabustan", "photo": "/images/godparents/rafael.jpg" }
+      { "name": "John Lloyd Santiago", "photo": "/images/godparents/john lloyd.jpg" },
+      { "name": "John Paul Gaspado", "photo": "/images/godparents/john paul.jpg" },
+      { "name": "Jay-R Maestro", "photo": "/images/godparents/jay ar.jpg" },
+      { "name": "Rafael Pabustan", "photo": "/images/godparents/rafael.jpg" },
+      { "name": "Albert Maestro", "photo": "/images/godparents/albert.jpg" }
     ]
   },
   "parentsMessage": {
